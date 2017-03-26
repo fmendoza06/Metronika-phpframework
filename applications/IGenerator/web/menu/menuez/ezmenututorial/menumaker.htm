@@ -1,0 +1,247 @@
+<html>
+<head><title>EZmenu Menu Maker</title>
+<style type="text/css">
+<!--
+.f1 {font-family: verdana; font-size: 8pt; color: #3300FF; }
+-->
+</style>
+</head>
+<script>
+var entry = new Array()
+var id = "ez_"
+
+function deal_with_error(msg, url, line) {
+   alert('Message: ' + msg + '\n' + 'In file: ' + url + '\n' + 'At line: ' + line);
+   //self.close();
+   return true;
+}
+
+self.onerror = deal_with_error;
+
+function genInput(name, size, value, preText, postText,max) {
+	if (!max) max = size
+	var str = preText + "&nbsp<input class=f1 type=text name=" + name + " size=" + size + " maxlength=" + max + " value=" + value + ">" + postText	
+	document.write(str)
+}
+
+var panelopt=new Array ('paneltype','fonttype','fontsize','fontcol','fontcolhi','tfonttype','tfontsize','tfontcol','bgcol','bgcolhi','tbgcol','borcol', 'outerborsize', 'innerborsize', 'textpad', 'bgimg','arrow', 'arrowhi', 'arrowsz', 'xover', 'yover', 'horizspc');
+
+function generateHeader() {
+	var str="Type:"
+	for (var i=0;i<panelopt.length; i++) {
+		 str += eval("document.menuProperties."+ panelopt[i]+".value")
+		 if (i!=panelopt.length-1) str += ","; else str += "\n"
+	}
+	var st = document.menuEntries.entries.value;
+	if (st != "") st = "\n"; else st = "";
+	document.menuEntries.entries.value += st+str
+	document.menuEntries.entries.focus()
+}
+
+function generateMenus() {	
+	document.menuVar.menuvar.value = ""
+	document.menuVar.menuvar.value = menuArrays()
+	
+}
+
+function menuArrays() {
+	entry = new Array()
+	readEntries()
+	var MenuNum = -1
+	var ItemNum = -1
+	var menu = new Array()
+	var root = new Array()
+	var menuID = new Array()
+	var rootProp = new Array()
+	var rootNum = -1
+	var bar=false
+	var isBar = new Array()
+	var panelname=new Array()
+	
+	
+	for (var i=0; i< entry.length; i++) {
+		if (entry[i].substring(0,5) == "Type:") { //new Panel
+			rootNum++
+			root[rootNum] = MenuNum+1
+			rootProp[rootNum] = entry[i]
+			if (entry[i].substring(0,8) == "Type:Bar") bar=true; else bar=false;
+		} 
+		
+		else if (entry[i].substring(0,6) == "Panel=") { //new Panel
+			MenuNum++			
+			menu[MenuNum] = new Array()
+			menuID[MenuNum] = entry[i].substring(6,entry[i].length)
+			ItemNum = -1		
+			isBar[MenuNum] = bar;	
+			panelname[MenuNum] = entry[i].substring(6)
+		} 
+		
+		else {
+			ItemNum++
+			menu[MenuNum][ItemNum] = entry[i]			
+		}	
+				
+	}			
+	
+	//replacing all the menu IDs in the menu entries with the appropriate menu index
+	for (var i=0; i< menu.length; i++) {
+		for (var j =0; j < menu[i].length; j++) {
+			var contents = menu[i][j].split("^")
+			if (contents.length >= 3) { //i.e. there is a child menu
+				var childIndex = -1
+				for (k=0; k< menu.length; k++) if (menuID[k] == contents[2]) childIndex = k;
+				menu[i][j] = contents[0] + "^" + contents[1] + "^" + childIndex
+			}
+		}
+	}
+					
+	var output = "var "+id+"Menu = new Array()\n"
+	for (var i=0; i< menu.length; i++) {		
+		output += id+'Menu['+i+']= new Array('		
+		for (var j =0; j < menu[i].length; j++) {
+			output += '"' + menu[i][j]			 		
+			if (j < menu[i].length-1) output += '", '; else output+= '")'
+		}		
+		output += "\n"
+	}
+	
+	var ez_fontInfo = "var ez_fontInfo = new Array("
+	var ez_tfontInfo = "var ez_tfontInfo = new Array("
+	var ez_colInfo = "var ez_colInfo = new Array("
+	var ez_borSize = "var ez_borSize = new Array("
+	var ez_txtPad = "var ez_txtPad = new Array("
+	var ez_arrow = "var ez_arrow = new Array("
+	var ez_barSpc = "var ez_barSpc = new Array("
+	var ez_root = "var ez_root = new Array("
+	var ez_xover = "var ez_xover = new Array("
+	var ez_yover = "var ez_yover = new Array("
+	var ez_bg = "var ez_bg = new Array("
+
+	for (var i=0; i <= rootNum; i++) {
+		var panelprop = rootProp[i].split(",")
+		if (i == rootNum) var term = ")\n" ; else var term = ", ";
+		var prop=new Array();	
+		for (j=0; j<panelopt.length; j++){
+			prop[panelopt[j]]= panelprop[j];	
+		}
+		ez_fontInfo += '"' + prop['fonttype'] + ',' + prop['fontsize'] + 'pt,#' + prop['fontcol'] + ',#' + prop['fontcolhi'] + '"' + term
+		ez_tfontInfo += '"' + prop['tfonttype'] + ',' + prop['tfontsize'] + 'pt,#' + prop['tfontcol'] + '"' + term
+		ez_colInfo += '"#' + prop['bgcol'] + ',#' + prop['bgcolhi'] + ',#' + prop['tbgcol'] + ',#' + prop['borcol'] + '"' + term
+		ez_borSize += '"' + prop['outerborsize'] + ',' + prop['innerborsize'] + '"' + term
+		ez_txtPad += '"' + prop['textpad'] + '"' + term
+		ez_arrow += '"' + prop['arrow'] + ',' + prop['arrowhi'] + ',' + prop['arrowsz'] + '"' + term
+		ez_barSpc += '"' + prop['horizspc'] + '"' + term
+		ez_root += '"' + root[i] + '"' + term
+		ez_xover += '"' + prop['xover'] + '"' + term
+		ez_yover += '"' + prop['yover'] + '"' + term
+		ez_bg += '"' + prop['bgimg'] + '"' + term
+
+	}
+	
+	var ez_isBar = "var ez_isBar = new Array("
+	var ez_pname = "var ez_pname = new Array("
+	for (var i=0; i< menu.length; i++) {
+		ez_pname += "'" + panelname[i] + "'"
+		if (isBar[i]) ez_isBar += "true"; else ez_isBar += "false";
+		if (i == menu.length-1) term = ')\n' ; else term = ', ';
+		ez_isBar+=term
+		ez_pname+=term
+	}
+	return (output + ez_fontInfo + ez_tfontInfo + ez_colInfo + ez_borSize + ez_txtPad + ez_arrow + ez_barSpc + ez_root + ez_isBar + ez_xover + ez_yover + ez_bg + ez_pname)
+}
+
+
+	
+
+function readEntries() {
+	var lines = document.menuEntries.entries.value+"\r"
+	var testlines=lines.split('\n')
+	var numLines = 0
+	for (var i=0; i<testlines.length; i++) {
+		if (testlines[i] != "\r" && testlines[i] != "") { //valid line
+			numLines ++
+			testlines[i] = testlines[i].substring(0,testlines[i].length-1) //remove the "\n" from the end
+			while(testlines[i].substring(testlines[i].length-1,testlines[i].length) == " ") { testlines[i] = testlines[i].substring(0,testlines[i].length-1)} //remove spaces from the end
+			entry[numLines-1] = testlines[i];
+		}
+	}
+}
+
+</script>
+
+<body style='font-size:8pt; font-family:verdana; color:#657733'>
+<p style='font-size:12pt;color:#000080'><b>EZmenu Menu Maker</b></p>
+<form name='menuProperties'>
+<b><u>Step One:</u> Enter the panel properties in the table below </b>(<a href='helpfiles/menu_properties.htm'>Click</a> to see description of properties)<br><br>
+<table width=650 cellpadding=2 cellspacing=0 border=1 style='font-size:8pt; font-family:verdana; color:#000000'>
+<tr><td colspan=2 bgcolor=#dddddd align=center><b>Panel Properties</b></td></tr>
+<tr><td width=30%>Select the panel type</td><td>
+	<Select class=f1 name=paneltype><Option value="Bar">Bar<Option value="Vertical">Vertical</Select></td></tr>
+<tr><td>Font style of menu items</td><td><script>
+	genInput("fonttype",15,"Arial","Type: "," ");
+	genInput("fontsize",2,"9","Size: ","pts<br>");
+	genInput("fontcol",6,"333333"," Color (hex):"," ");
+	genInput("fontcolhi",6,"895749"," Highlighted Color (hex):"," ")</script></td></tr>
+<tr><td>Font style of menu title items</td><td><script>
+	genInput("tfonttype",15,"Arial","Type: "," ");
+	genInput("tfontsize",2,"9","Size: ","pts<br>");
+	genInput("tfontcol",6,"FFFF86"," Color (hex):"," ");</script></td></tr>
+<tr><td>Menu color scheme</td><td><script>
+	genInput("bgcol",6,"FFFFFF"," Background Color (hex):","<br>");
+	genInput("bgcolhi",6,"FFFFA0"," Highlighted Background Color (hex):","<br>");
+	genInput("tbgcol",6,"007FEE"," Title Background Color (hex):","<br>");
+	genInput("borcol",6,"987891"," Border Color (hex):"," ")</script></td></tr>
+<tr><td>Border sizes</td><td><script>
+	genInput("outerborsize",1,"1","Outer Border: ","pixels<br>");
+	genInput("innerborsize",1,"1","Inner Border: ","pixels<br>");</script></td></tr>
+<tr><td>Text Padding</td><td><script>
+	genInput("textpad",2,"3","","pixels");</script></td></tr>
+<tr><td>Background Image (Tiled)<br><i>Path is relative to the webpage loading the menu</i></td><td><script>
+	genInput("bgimg",30,"","Filename (Leave blank if not required)","<br>",255);</script></td></tr>
+<tr><td>Arrow Graphics<br><i>Path is relative to the webpage loading the menu</i></td><td><script>
+	genInput("arrow",30,"images/arrow.gif","Normal Arrow Graphics","<br>",255);
+	genInput("arrowhi",30,"images/arrowhi.gif","Highlighted Arrow Graphics","<br>",255);
+	genInput("arrowsz",1,"10","Dimension","pixels (same width and height)");</script></td></tr>
+<tr><td>Submenus Overlap</td><td><script>
+	genInput("xover",4,"0","X-overlap","pixels &nbsp;");
+	genInput("yover",4,"0","Y-overlap","pixels");</script></td></tr>
+<tr><td>Horizontal space between items (for bar panels only)</td><td><script>
+	genInput("horizspc",4,"50","","pixels");</script></td></tr>
+
+</table>
+<br>
+<b><u>Step Two:</u> Click to generate and add panel header to the panel entries box below</b>
+<input class=f1 type=button value='Generate Header' onclick=generateHeader()>
+</form>
+
+<br>
+<form name='menuEntries'>
+<b><u>Step Three:</u> Enter the panel entries in the table below after the panel header.</b><br> Go back to Step One to add extra panel headers if necessary(i.e. if you want to add panels of different properties)<br><br>
+<table cellpadding=0 cellspacing=0 border=1 style='font-size:8pt; font-family:verdana; color:#000000'>
+<tr><td bgcolor=#dddddd align=center><b>Panel Entries</b></td></tr>
+<tr><td><textarea class=f1 wrap='off' name='entries' cols=104 rows=30></textarea></td></tr>
+</table>
+<br>
+(If you need to highlight the panel entries, click here <input class=f1 type=button value='Highlight Entries' onclick=document.menuEntries.entries.select()> )
+
+</form>
+
+<form name='menuVar'>
+<b><u>Step Four:</u> Click to generate the javascript code in the box below</b>
+<input class=f1 type=button value='Generate Code' onclick=generateMenus()><br><br>
+<b><u>Step Five:</u> Click to highlight the generated javascript code, copy and paste it in a text editor <br> and save it as "ezdata.js"</b>
+<input class=f1 type=button value='Highlight Code' onclick=this.form.menuvar.select()><br><br>
+<table cellpadding=0 cellspacing=0 border=1 style='font-size:8pt; font-family:verdana; color:#000000'>
+<tr><td bgcolor=#dddddd align=center><b>Menu Javascript Code</b></td></tr>
+<tr><td><textarea class=f1 wrap='off' name='menuvar' cols=104 rows=30></textarea></td></tr>
+</table>
+</form>
+
+<form>
+<p>That's it! However, it is recommended you also save the panel entries that you have keyed in a text file 
+<br>so that you can paste it back and not retype it in the future. 
+<br>Click here to highlight the entries 
+<input class=f1 type=button value='Highlight Entries' onclick=document.menuEntries.entries.select()>
+</form>
+</body>
+</html>

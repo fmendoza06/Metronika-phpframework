@@ -1,0 +1,110 @@
+body, p, td { font-family: arial, helvetica, verdana, tahoma; font-size: 12px;
+     		  background-image: url("../images/fongo.jpg");
+     		  background-color: #E4E4E4;;
+              background-attachment: fixed; }
+
+p { margin-top: 7px; margin-bottom: 5px }
+
+ul, ol, li	{ margin-top: 5px; margin-bottom: 5px; margin-left: 12px }
+ol			{ margin-top: 5px; margin-bottom: 5px; margin-left: 20px }
+
+a:link		{ font-size: 12px; text-decoration: underline; color: blue;}
+a:visited	{ font-size: 12px; text-decoration: underline; color: blue;}
+a:hover, a:active { font-size: 12px; text-decoration: none; color: blue;}
+
+H1			{ font-size: 18px; font-weight: bold; margin-top: 5px; margin-bottom: 5px; }
+H2			{ font-size: 16px; font-weight: bold; margin-top: 15px; margin-bottom: 5px; }
+H3			{ font-size: 14px; font-weight: bold; font-style: italic; margin-top: 15px; margin-bottom: 5px; }
+H4			{ font-size: 12px; margin-top: 15px; margin-bottom: 5px; }
+H5			{ font-size: 12px; font-style: italic; margin-top: 15px; margin-bottom: 5px; }
+TH			{ font-size: 12px; background-color: #4080BF; color: #E4E4E4; font-weight: bold; text-align: left; padding : 3px; }
+TD			{ font-size: 12px; background-color: #CCCCCC; color: #000000; vertical-align: top; padding : 3px; }
+
+input, select, textarea {
+        font-family: arial,helvetica,sans-serif;
+        font-size: 90%;
+}
+
+PRE.code	{ margin: 5px 50px 5px 10px;  background-color: #eeeeee; border: 1px solid Silver; padding: 5px}
+.flow		{ margin: 5px 10px 5px 0px; background-color: #eeeeee; border: 1px solid Silver; padding: 5px}
+.hrow		{ background-color: #D8F1F1; font-weight: bold; }
+
+
+P.flow a:link		{ font-size: 12px; text-decoration: none; color: blue;}
+P.flow a:visited	{ font-size: 12px; text-decoration: none; color: blue;}
+P.flow a:hover		{ font-size: 12px; text-decoration: underline; color: blue;}
+P.flow a:active		{ font-size: 12px; text-decoration: underline; color: blue;}
+
+.dynamic-tab-pane-control.tab-pane {
+	position:	relative;
+	width:		100%;
+}
+
+.dynamic-tab-pane-control .tab-row .tab {
+	font:			Menu;
+	cursor:			Default;
+	display:		inline;
+	margin:			1px -2px 1px 2px;
+	float:			left;
+	padding:		2px 5px 3px 5px;
+	background:		E4E4E4;
+	border:			1px solid;
+	border-color:	ThreeDHighlight ThreeDDarkShadow
+					ThreeDDarkShadow ThreeDHighlight;
+	border-bottom:	0;
+	z-index:		1;
+	position:		relative;
+	top:			0;
+}
+
+.dynamic-tab-pane-control .tab-row .tab.selected {
+	border-bottom:	0;
+	z-index:		3;
+	padding:		2px 6px 5px 7px;
+	margin:			1px -3px -2px 0px;
+	top:			-2px;
+}
+
+.dynamic-tab-pane-control .tab-row .tab a {
+	font:				Menu;
+	color:				WindowText;
+	text-decoration:	none;
+	cursor:				default;
+}
+
+.dynamic-tab-pane-control .tab-row .hover a {
+	color:	blue;
+}
+
+.dynamic-tab-pane-control .tab-page {
+	clear:			both;
+	border:			1px solid;
+	border-color:	ThreeDHighlight ThreeDDarkShadow
+			ThreeDDarkShadow ThreeDHighlight;
+	background:		E4E4E4;
+	z-index:		2;
+	position:		relative;
+	top:			-2px;
+	color:			WindowText;
+	font:			Message-Box;
+	padding:		5px;
+}
+
+.dynamic-tab-pane-control .tab-page1 {
+	clear:			both;
+	border:			1px solid;
+	border-color:	        ThreeDHighlight ThreeDDarkShadow
+				ThreeDDarkShadow ThreeDHighlight;
+	background:		E4E4E4;
+	/*z-index:		2;*/
+	position:		relative;
+	top:			-2px;
+	color:			WindowText;
+	font:			Message-Box;
+	padding:		5px;
+}
+
+.dynamic-tab-pane-control .tab-row {
+	z-index:		1;
+	white-space:	nowrap;
+}

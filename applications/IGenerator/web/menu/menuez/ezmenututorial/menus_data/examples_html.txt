@@ -1,0 +1,42 @@
+<html>
+<head><title>EZmenu Installation Guide</title>
+<style type="text/css">
+<!--
+h1 {font-family: arial; font-size: 11pt; color: #000080; }
+p {font-family: arial; font-size: 10pt; color: #111111;}
+-->
+</style>
+
+
+<script language="JavaScript" src="menus_data/examples.js"></script>
+<script language="JavaScript"> ez_codePath = "code/" </script>
+<script language="JavaScript"> document.write("<SCR" + "IPT SRC='" + ez_codePath + "ezloader.js'><\/SCR" + "IPT>"); </script> 
+<script language="JavaScript">menusGo()</script>
+
+<script> showPermPanel('P1', 10, 200) </script>
+<script> showPermPanel('P4', 250, 200) </script>
+<script> showPermPanel('P6', 10, 300) </script>
+<script> showPermPanelCentered('P8', 250, 115) </script>
+
+</head>
+
+<body onload='menusGoOpera()' topmargin="10" leftmargin="10" marginwidth="0" marginheight="0" background="images/bgimg2.gif">
+
+<h1>EZmenu Examples</h1>
+
+<p><a href='menus_data/examples.txt'>See Menu Maker Entries for this page</a>&nbsp;&nbsp;<a href='menus_data/examples_html.txt'>See HTML source for this page</a>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<a href=# onmouseover="showRelativePanel('Popup1',event)" onmouseout="hidePanel()">Move Mouse Over Here (Relative Positioning)</a> 
+
+<br><br><br><br>
+
+<p><a name='b' href='#b' onclick="showRelativePanel('Popup1',event)" onmouseout="hidePanel()">Click Mouse Here (Relative Positioning)</a>
+
+<br><br><br><br>
+
+<p>Absolute Positioning: <a href=# onmouseover="showPanel('Popup1',250,550)" onmouseout="hidePanel()"><img valign=middle src='images/button.gif' border=0></a>
+
+</body>
+</html>

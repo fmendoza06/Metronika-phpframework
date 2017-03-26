@@ -1,0 +1,2 @@
+[28-Jun-2015 22:13:31 America/Bogota] PHP Strict Standards:  Only variables should be assigned by reference in /home/myhostin/public_html/apps/ingravity/applications/IGenerator/config/SaveNavigationFile.php on line 220
+[28-Jun-2015 22:13:31 America/Bogota] PHP Strict Standards:  Non-static method PEAR::isError() should not be called statically in /home/myhostin/public_html/apps/ingravity/applications/IGenerator/config/SaveNavigationFile.php on line 222

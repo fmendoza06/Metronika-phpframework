@@ -1,0 +1,25 @@
+Type:Bar,Verdana,8,333333,895749,Verdana,8,FFFF86,FFFFFF,FFFFA0,007FEE,987891,1,1,3,,images/arrow.gif,images/arrowhi.gif,10,0,0,50
+
+Panel=Bar
+!<b>Web-NOVA</b>^http://web-nova.com 
+Magazines^^Mag 
+Search Engines^^Search
+
+
+Type:Vertical,Verdana,8,333333,895749,Verdana,8,FFFF86,FFFFFF,FFFFA0,007FEE,987891,1,1,3,,images/arrow.gif,images/arrowhi.gif,10,0,0,50
+
+Panel=Mag 
+Computers^^Comp 
+Science^^Sci
+
+Panel=Search 
+Yahoo^http://yahoo.com 
+Lycos^http://lycos.com
+
+Panel=Comp 
+PC Magazine^http://pcmag.com 
+PC World^http://pcworld.com
+
+Panel=Sci 
+Scientific America^http://sciam.com 
+New Scientist^http://newscientist.com 

@@ -1,0 +1,144 @@
+body				{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666666;
+	background-color: #FFFFFF;
+}
+table				{ font-family: Arial, Helvetica, sans-serif; font-size: 10px; color: #666666; }
+
+a:link       		{
+	color: #447FC1;
+	text-decoration: none;
+	font-size: 10px;
+	font-weight: bold;
+}
+a:active     		{
+	text-decoration: none;
+	font-size: 10px;
+	font-weight: bold;
+	color: #447FC1;
+}
+a:visited    		{
+	text-decoration: none;
+	font-size: 10px;
+	font-weight: bold;
+	color: #447FC1;
+}
+a:hover      		{ color: #447FC1; text-decoration: none; font-size: 10px; font-weight: bold; }
+
+a.estilo3:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #62A7D1;
+	text-decoration: none;
+	font-weight: bold;
+}
+a.estilo3:active {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #62A7D1;
+	text-decoration: none;
+	font-weight: bold;
+}
+a.estilo3:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #0374B3;
+	text-decoration: none;
+	font-weight: bold;
+}
+a.estilo3:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+bold; 	color: #003399;
+	font-weight: bold;
+}
+
+a.estilo4:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFCC00;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a.estilo4:visited {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #FFCC00;
+	text-decoration: none;
+	font-weight: bold;
+}
+a.estilo4:hover {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #FF9900;
+	font-weight: bold;
+}
+
+a.estilo5:link {
+	color: #447FC1;
+	text-decoration: none;
+	font-size: 10px;
+	font-weight: bold;
+}
+a.estilo5:visited {
+		text-decoration: none;
+	font-size: 10px;
+	font-weight: bold;
+	color: #447FC1;
+}
+
+a.estilo5:hover { color: #447FC1; text-decoration: none; font-size: 10px; font-weight: bold; }
+
+
+.tblanco {
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 9px;
+}
+.azul {
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #437FC1;
+	font-weight: bold;
+}
+.rojogrande {
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: #FF0000;
+}
+.titblanc {
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.texto {
+	font-family: Tahoma, Tahoma, Arial;
+	font-size: 10px;
+	color: #333333;
+}
+.naranja {
+	font-family: Tahoma, Arial;
+	font-size: 10px;
+	color: #FF8B2A;
+	font-weight: bold;
+}
+.observaciones {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bolder;
+	color: #FFFFFF;
+	background-color: #447FC1;
+}
+.caracteristicas {
+	background-color: #E8ECEE;
+}
+.titulos {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #447FC1;
+}

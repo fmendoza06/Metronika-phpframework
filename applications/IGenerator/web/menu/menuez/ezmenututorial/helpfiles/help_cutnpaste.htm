@@ -1,0 +1,60 @@
+<html>
+<head><title>EZmenu Installation Guide</title>
+<style type="text/css">
+<!--
+h1 {font-family: arial; font-size: 11pt; color: #000080; }
+h2 {font-family: arial; font-size: 10pt; color: #000080; }
+p {font-family: arial; font-size: 10pt; color: #111111;}
+.f1 {font-family: arial; font-size: 10pt; color: #3300FF;}
+.f2 {font-family: arial; font-size: 9pt; color: #3300FF;}
+-->
+</style>
+</head>
+
+<body topmargin="0" leftmargin="0" marginwidth="0" marginheight="0" background="../images/bgimg2.gif">
+<table width=500 border=0 cellspacing=0 cellpadding=20 >
+<tr>
+<td>
+<h1><b>Cut and Paste Script on Webpage</b></h1>
+<p>Now that you have generated the menu panels, the next step is to tell your web page to load them.
+
+<p>You will need to copy and paste the following script to your web page between the &lt;HEAD&gt; and &lt;/HEAD&gt; tags (You may also need to configure lines 1 and 2, see below):
+
+<p>
+<table width=460 border=1 cellpadding=10>
+<tr><td>
+<p> &lt;HEAD&gt;
+<p>....Your Own HTML Code....
+<p><b>
+&lt;script language="JavaScript" src="ezdata.js"&gt;&lt;/script&gt;<br>
+&lt;script language="JavaScript"&gt; ez_codePath = "code/" &lt;/script&gt;<br>
+&lt;script language="JavaScript"&gt; <br>
+ document.write("&lt;SCR" + "IPT  SRC='" + ez_codePath + "ezloader.js'&gt;&lt;\/SCR" + "IPT&gt;");
+&lt;/script&gt; <br>
+&lt;script language="JavaScript">menusGo()&lt;/script&gt;<br>
+</b><br>
+<p>
+&lt;/HEAD&gt;<br>
+<p>....Your Own HTML Code....
+</td></tr>
+</table>
+
+<h2><a name='dir'>Path and Filename Configuration (Important!)</a></h2>
+
+<p>The first line of the above script assumes that the menu contents are specified in the file "ezdata.js" which is stored in the 
+same directory as the web page. If it is named differently or stored in a different directory, you can specify the 
+name and path accordingly, e.g. <b>src="http://yoursite.com/directory/yourfile.js"</b>.
+
+
+<p>The second line ez_codePath="code/" tells the webpage that the EZMenu source files (i.e. ezloader.js, ezmenuie.js
+and ezmenuns.js) are stored in the subdirectory "code/" relative to the webpage. You may need to change it 
+to reflect your own path e.g <b>ez_codePath="http://yoursite.com/dir/" </b>, if the files are stored in a different directory.
+
+</td>
+</tr>
+</table>
+
+
+</body>
+
+</html>

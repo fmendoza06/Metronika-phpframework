@@ -1,0 +1,23 @@
+<html>
+<head><title>EZmenu Simple Example</title>
+
+<script language="JavaScript" src="menus_data/simple_example.js"></script>
+<script language="JavaScript"> ez_codePath = "code/" </script>
+<script language="JavaScript"> 
+document.write("<SCR" + "IPT SRC='" + ez_codePath + "ezloader.js'><\/SCR" + "IPT>"); </script> 
+<script>menusGo()</script>
+<script>showPermPanel('Bar', 10, 80) </script>
+
+</head>
+
+<body onload='menusGoOpera()' topmargin="10" leftmargin="10" marginwidth="0" marginheight="0" background="images/bgimg2.gif">
+
+<h1>EZmenu Simple Example</h1>
+
+<br><br><br><br><br><br>
+
+<p><a href='menus_data/simple_example.txt'>Click</a> to see Menu Maker input for this menu.
+<p><a href='menus_data/simple_example_html.txt'>Click</a> to see html code of this page.
+
+</body>
+</html>

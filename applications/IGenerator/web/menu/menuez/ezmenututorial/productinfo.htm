@@ -1,0 +1,52 @@
+<html>
+<head><title>EZmenu Installation Guide</title>
+<style type="text/css">
+<!--
+h1 {font-family: arial; font-size: 11pt; color: #000080; }
+h2 {font-family: arial; font-size: 10pt; color: #000080; }
+p {font-family: arial; font-size: 10pt; color: #111111;}
+-->
+</style>
+
+<script language="JavaScript" src="menus_data/examples.js"></script>
+<script language="JavaScript"> ez_codePath = "code/" </script>
+<script language="JavaScript"> 
+document.write("<SCR" + "IPT SRC='" + ez_codePath + "ezloader.js'><\/SCR" + "IPT>"); </script> 
+<script language="JavaScript">menusGo()</script>
+
+<script> showPermPanel('P1', 10, 300) </script>
+<script> showPermPanel('P4', 250, 300) </script>
+<script> showPermPanel('P6', 10, 400) </script>
+<script> showPermPanelCentered('P8', 250, 200) </script>
+</head>
+
+<body onload='menusGoOpera()' topmargin="0" leftmargin="0" marginwidth="0" marginheight="0" background="images/bgimg2.gif">
+<table width=500 border=0 cellspacing=0 cellpadding=20 >
+<tr>
+<td>
+<h1><b>EZMenu Version 2.1</b></h1>
+
+<p>Thank you for downloading EZmenu. This version may be used freely for non-commercial purposes, but will contain a link to our website. This link will be <b>activated</b> once you upload the files to your server. If you wish to remove the link to our site you may purchase the registered version from our <a href='http://web-nova.com/shop.asp'>online shop</a> and simply replace the old code with the registered code.
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+<a href=# onmouseover="showRelativePanel('Popup1',event)" onmouseout="hidePanel()">Move Mouse Over Here (Relative Positioning)</a> 
+
+<br><br><br><br>
+
+<a  name='b' href='#b' onclick="showRelativePanel('Popup1',event)" onmouseout="hidePanel()"><u>Click Mouse Here (Relative Positioning)</u></a>
+
+<br><br><br><br>
+
+Absolute Positioning: <a href=# onmouseover="showPanel('Popup1',270,600)" onmouseout="hidePanel()"><img valign=middle src='images/button.gif' border=0></a>
+
+</td>
+</tr>
+</table>
+
+
+
+</body>
+
+</html>

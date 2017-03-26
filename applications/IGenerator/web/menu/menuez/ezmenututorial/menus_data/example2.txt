@@ -1,0 +1,29 @@
+Type:Bar,Arial,9,FFFFFF,000000,Arial,9,FFFF86,0000AA,FFFFFF,007FEE,000000,1,2,2,,images/arrow.gif,images/arrow.gif,10,0,5,5
+
+Panel=Main
+!<b>|</b>
+<b>Home</b>^http://web-nova.com
+!<b>|</b>
+<b>Products</b>^^Products
+!<b>|</b>
+<b>Shop Online</b>^http://web-nova.com/shop.asp
+!<b>|</b>
+<b>Frame Example</b>^http://yahoo.com,left
+!<b>|</b>
+<b>New Window</b>^http://yahoo.com,newWin
+!<b>|</b>
+
+Type:Vertical,Arial,9,FFFFFF,000000,Arial,9,FFFF86,0000AA,FFFF86,007FEE,FFFFFF,0,2,2,,images/arrow.gif,images/arrow.gif,10,-3,0,50
+
+Panel=Products
+DHTML^^DHTML
+Java Applets^^Applets
+
+Panel=DHTML
+EZMenu^http://web-nova.com/ezmenu.asp
+
+Panel=Applets
+NavPop^http://web-nova.com/navpop.asp
+NavExplorer^http://web-nova.com/navexplorer.asp
+Nite^http://web-nova.com/nite.asp
+

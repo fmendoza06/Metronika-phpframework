@@ -1,0 +1,60 @@
+To use Dynamic Menus Generation , Follow the next step :
+
+Preamble : 
+
+  This functionality only is available  for use with
+  PHP Spyro FrameWork and Auth Security Layer Solution
+  for Spyro Frame Work.
+
+  You will be parameter your profiles an menus for applications.
+  If no existe parameter for menus, you have any problem.
+  
+  Take care with uses this functionality, remember put
+  into respective folder the smarty plugin for the style menu.
+  
+  Read carefully  the next instructions.
+
+
+1- For menu NAV  Style
+
+
+    a. Will be exist the ../web/menu/
+                                      /menunav (Folder)
+                                         menu.js       -> javascript file for build menu
+                                         menu_tpl2.tpl -> menu parameter
+                                         /css (Folder)
+                                            All style Shets for build menu
+
+    b. put Smarty Tag between <head> html tag
+
+           <!-- genera tigra menu  -->
+           {menusnav}
+
+    c. The nex Line put into body tag
+           <script language='JavaScript'>new menu (MENU_ITEMS, MENU_POS2);</script>
+
+2. For menu TREE Style
+
+    a. Will be exist the ../web/menu/
+                                      /menutree (Folder)
+                                         tree.js  -> javascript file for build menu
+                                         tree.tpl -> menu parameter
+                                         /icons (Folder)
+                                           All icons for build menu
+
+    a. put Smarty Tag between <head> html tag
+           <!-- genera tigra tree menu  -->
+           {menustree}
+
+
+3. For menu EZ style
+
+    a. Will be exist the ../web/menu/
+                                      /menunez (Folder)
+                                        ezloader.js
+                                        ezmenuie.js
+                                        ezmenuns.js
+                                        ezmenututorial.zip
+    b. put Smarty Tag between <head> html tag
+           <!-- Genera Spyro Menu ez-->
+           {menusez}

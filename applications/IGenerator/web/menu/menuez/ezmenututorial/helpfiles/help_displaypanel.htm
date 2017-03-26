@@ -1,0 +1,63 @@
+<html>
+<head><title>EZmenu Installation Guide</title>
+<style type="text/css">
+<!--
+h1 {font-family: arial; font-size: 11pt; color: #000080; }
+h2 {font-family: arial; font-size: 10pt; color: #000080; }
+p {font-family: arial; font-size: 10pt; color: #111111;}
+.f1 {font-family: arial; font-size: 10pt; color: #3300FF;}
+.f2 {font-family: arial; font-size: 9pt; color: #3300FF;}
+-->
+</style>
+</head>
+
+<body topmargin="0" leftmargin="0" marginwidth="0" marginheight="0" background="../images/bgimg2.gif">
+<table width=500 border=0 cellspacing=0 cellpadding=20 >
+<tr>
+<td>
+<h1><b>Select Panels to Display Premanently on Webpage</b></h1>
+<p>Now that you have told your webpage to load the menu panels, the final step is to tell it which panels to display first on page load.
+
+<p>You do this by using the built-in command showPermPanel, ie:
+<p><b>&lt;script&gt; showPermPanel('Panel Name', x-coordinate, y-coordinate) &lt;/script&gt;</b>
+
+<p>Panel Name = Name of the panel to be displayed (This is the name as entered in the Menu Maker). <b>Remember to enclose
+the name within single quotes.</b>
+<p>x-coordinate, y-coordinate = The location of the point on the webpage where the upper left corner of the panel will be placed.
+
+<h2>Note</h2>
+
+<p>The panels you specify using showPermPanel will be permanently displayed on your webpage. All child panels will be <b>automatically</b> positioned and displayed when invoked. 
+
+<p>You may use the command showPermPanel anywhere on your webpage, or in between the &lt;HEAD&gt; and &lt;/HEAD&gt; tags as before:
+<p>
+<table width=460 border=1 cellpadding=10>
+<tr><td>
+<p> &lt;HEAD&gt;
+<p>....Your Own HTML Code....
+<p>
+&lt;script language="JavaScript" src="ezdata.js"&gt;&lt;/script&gt;<br>
+&lt;script language="JavaScript"&gt; ez_codePath = "code/" &lt;/script&gt;<br>
+&lt;script language="JavaScript"&gt; <br>
+ document.write("&lt;SCR" + "IPT  SRC='" + ez_codePath + "ezloader.js'&gt;&lt;\/SCR" + "IPT&gt;");
+&lt;/script&gt; <br>
+&lt;script language="JavaScript">menusGo()&lt;/script&gt;<br>
+<p>
+<b>&lt;script&gt; showPermPanel('Bar', 10, 80) &lt;/script&gt;</b><br>
+<p>
+&lt;/HEAD&gt;<br>
+
+<p>....Your Own HTML Code....
+</td></tr>
+</table>
+
+<h1>That's all to it!</h1>
+
+</td>
+</tr>
+</table>
+
+
+</body>
+
+</html>

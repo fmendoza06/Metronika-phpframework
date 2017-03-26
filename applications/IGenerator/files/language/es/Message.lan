@@ -1,0 +1,12 @@
+<?php
+
+$Alerts = array (
+    '100' => 'Error: Un dato con (*) no se ha ingresado',
+    '101' => 'Error: Registro ya Existe',
+    '102' => 'Error: Registro NO Existe',
+    '103' => 'Operacion ejecuta con Exito',
+    '104' => 'Tipo de Dato Invalido' ,
+    '105' => 'Transaccion Invalida, Intente Nuevamente',
+)
+
+ ?>

@@ -1,0 +1,5 @@
+[12-Nov-2012 04:19:21] PHP Fatal error:  Call to a member function Connect() on a non-object in E:\CEO\JoseMendoza\spyro\webserver\xampp\htdocs\ingravity5\lib\MDB_MetaData\MDB_MetaData.php on line 13
+[12-Nov-2012 04:19:27] PHP Fatal error:  Call to a member function Connect() on a non-object in E:\CEO\JoseMendoza\spyro\webserver\xampp\htdocs\ingravity5\lib\MDB_MetaData\MDB_MetaData.php on line 13
+[12-Nov-2012 04:19:45] PHP Notice:  Undefined variable: action in E:\CEO\JoseMendoza\spyro\webserver\xampp\htdocs\ingravity5\applications\IGenerator\web\plugins\block.form.php on line 34
+[12-Nov-2012 04:19:45] PHP Notice:  Undefined variable: enctype in E:\CEO\JoseMendoza\spyro\webserver\xampp\htdocs\ingravity5\applications\IGenerator\web\plugins\block.form.php on line 40
+[12-Nov-2012 04:19:45] PHP Notice:  Undefined variable: target in E:\CEO\JoseMendoza\spyro\webserver\xampp\htdocs\ingravity5\applications\IGenerator\web\plugins\block.form.php on line 46

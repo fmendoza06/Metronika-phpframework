@@ -1,0 +1,174 @@
+tr {
+
+	height: 8px;
+      border: solid 1px #ddd;
+
+}
+td {
+	font-size: 11px;
+     
+}
+/* header block */
+table.adminheading {
+	background-color: #F9F9F9;
+	font-family : Tahoma, Arial, Helvetica, sans-serif;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	border-collapse: collapse;
+	color: #000033;
+	font-size : 16px;
+	font-weight: bold;
+	text-align: left;
+      width: 100%;
+}
+table.adminheading th {
+	background: url(../../../images/generic.png) no-repeat left;
+	text-align: left;
+	height: 50px;
+	width: 100%;
+	padding-left: 50px;
+	border-bottom: 5px solid #fff;
+      border: solid 1px #ddd;
+
+}
+table.adminheading th.checkin {
+	background: url(../../../images/checkin.png) no-repeat left;
+}
+table.adminheading th.cpanel {
+	background: url(../../../images/cpanel.png) no-repeat left;
+}
+table.adminheading th.config {
+	background: url(../../../images/config.png) no-repeat left;
+}
+table.adminheading th.modules {
+	background: url(../../../images/module.png) no-repeat left;
+}
+table.adminheading th.menus {
+	background: url(../../../images/menu.png) no-repeat left;
+}
+table.adminheading th.trash {
+	background: url(../../../images/trash.png) no-repeat left;
+}
+table.adminheading th.user {
+	background: url(../../../images/user.png) no-repeat left;
+}
+table.adminheading th.inbox {
+	background: url(../../../images/inbox.png) no-repeat left;
+}
+table.adminheading th.msgconfig {
+	background: url(../../../images/message_config.png) no-repeat left;
+}
+table.adminheading th.langmanager {
+	background: url(../../../images/langmanager.png) no-repeat left;
+}
+table.adminheading th.mediamanager {
+	background: url(../../../images/mediamanager.png) no-repeat left;
+}
+table.adminheading th.impressions {
+	background: url(../../../images/impressions.png) no-repeat left;
+}
+table.adminheading th.browser {
+	background: url(../../../images/browser.png) no-repeat left;
+}
+table.adminheading th.searchtext {
+	background: url(../../../images/searchtext.png) no-repeat left;
+}
+table.adminheading th.templates {
+	background: url(../../../images/templatemanager.png) no-repeat left;
+}
+table.adminheading th.massemail {
+	background: url(../../../images/massemail.png) no-repeat left;
+}
+table.adminheading th.frontpage {
+	background: url(../../../images/frontpage.png) no-repeat left;
+}
+table.adminheading th.sections {
+	background: url(../../../images/sections.png) no-repeat left;
+}
+table.adminheading th.edit {
+	background: url(../../../images/addedit.png) no-repeat left;
+}
+table.adminheading th.categories {
+	background: url(../../../images/categories.png) no-repeat left;
+}
+table.adminheading th.install {
+	background: url(../../../images/install.png) no-repeat left;
+}
+table.adminheading th.dbbackup {
+	background: url(../../../images/backup.png) no-repeat left;
+}
+table.adminheading th.dbrestore {
+	background: url(../../../images/dbrestore.png) no-repeat left;
+}
+table.adminheading th.dbquery {
+	background: url(../../../images/query.png) no-repeat left;
+}
+table.adminheading th.info {
+	background: url(../../../images/systeminfo.png) no-repeat left;
+}
+
+table.adminheading td {
+	color : #000;
+}
+/* standard list style table */
+table.adminlist {
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #ddd;
+	border-spacing: 0px;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table.adminlist th {
+	margin: 0px;
+	padding: 6px 4px 2px 4px;
+	height: 25px;
+	background: url(../images/background.jpg);
+	background-repeat: repeat;
+	font-size: 11px;
+	color: #000;
+}
+
+
+
+table.adminlist th.title {
+	text-align: left;
+}
+
+table.adminlist th a:link, table.adminlist th a:visited {
+	color: #c64934;
+	text-decoration: none;
+}
+
+table.adminlist th a:hover {
+	text-decoration: underline;
+}
+
+table.adminlist tr.row0 {
+	background-color: #F9F9F9;
+}
+table.adminlist tr.row1 {
+	background-color: #FFF;
+}
+table.adminlist td {
+	border-bottom: 1px solid #e5e5e5;
+	padding: 4px;
+}
+table.adminlist tr.row0:hover {
+	background-color: #f1f1f1;
+}
+table.adminlist tr.row1:hover {
+	background-color: #f1f1f1;
+}
+table.adminlist td.options {
+	background-color: #ffffff;
+	font-size: 8px;
+}
+select.options, input.options {
+	font-size: 8px;
+	font-weight: normal;
+	border: 1px solid #999999;
+}
